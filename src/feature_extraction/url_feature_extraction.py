@@ -1,6 +1,10 @@
 import pandas as pd
 import re
 from urllib.parse import urlparse
+import argparse
+
+# USAGE: From main directory:
+# python src/feature_extraction/url_feature_extraction.py input/location.csv output/location.csv
 
 def extract_url_features(url):
     parsed = urlparse(url)
@@ -36,3 +40,11 @@ def process_dataset(input_csv, output_csv):
 
     df_features.to_csv(output_csv, index=False)
     print(f"Processed dataset saved to {output_csv}")
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Extract URL features from a dataset.")
+    parser.add_argument("input_csv", help="Path to input dataset (CSV)")
+    parser.add_argument("output_csv", help="Path to save processed dataset (CSV)")
+    args = parser.parse_args()
+
+    process_dataset(args.input_csv, args.output_csv)

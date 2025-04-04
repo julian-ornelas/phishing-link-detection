@@ -1,0 +1,4 @@
+/venv
+/notebooks/catboost_info
+/src/feature_extraction/__pycache__
+/src/model_deployment/__pycache__

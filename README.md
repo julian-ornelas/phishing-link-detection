@@ -30,7 +30,7 @@ Phishing is a common cyberattack that uses fraudulent URLs to deceive users. Thi
 - **CLI-Based Tool:**
   - Extracts relevant features from input URLs
   - Applies robust scaling
-  - Predicts phishing with confidence score
+  - Predicts phishing using XGBoost model with confidence score
 
 ## Running The Project
 
@@ -70,5 +70,5 @@ pip install -r requirements.txt
 
 Ensure you are in the `model_deployment` directory first:
 ```
-python model_deployment/run.py "URL"
+python run.py "URL"
 ```
